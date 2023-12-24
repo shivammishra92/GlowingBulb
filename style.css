@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+}
+
+.wrapper {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    /* background-color: red; */
+}
+
+.wrapper img {
+    /* display: none; */
+    position: absolute;
+    /* glowing aur non-glowing bulb ko overlap karva diya i.e combined them all*/
+    height: 500px;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.wrapper label {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+
+}
+
+.wrapper label span {
+    color: white;
+    font-size: large;
+    text-transform: uppercase;
+    display: block;
+    border: 2px solid rgb(177, 154, 154);
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 2.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.wrapper label span:hover {
+    color: red;
+    background: rgb(245, 241, 241);
+}
+/* .wrapper img #bulb-off {
+    opacity: 0;
+    animation: none;
+} */
+
+.wrapper img #bulb-on {
+    opacity: 0;
+    animation: glow 3s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    84% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.wrapper label span:before {
+    content: "Turn Off";
+}
+
+#btn:checked ~ .wrapper img #bulb-on {
+    animation: none;
+}
+
+#btn:checked ~ label span:before {
+    content: "Turn  On";
+    color: green;
+}
+
+.wrapper input {
+    display: none;
+}
