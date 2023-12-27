@@ -52,8 +52,13 @@ body {
 
 }
 
+.wrapper label span:before {
+    content: "Turn Off";
+}
+
+
 .wrapper label span:hover {
-    color: red;
+    color: rgb(0, 255, 55);
     background: rgb(245, 241, 241);
 }
 /* .wrapper img #bulb-off {
@@ -61,10 +66,12 @@ body {
     animation: none;
 } */
 
-.wrapper img #bulb-on {
+
+.wrapper img#bulb-on {
     opacity: 0;
     animation: glow 3s linear infinite;
 }
+
 
 @keyframes glow {
     0% {
@@ -101,17 +108,14 @@ body {
 
 }
 
-.wrapper label span:before {
-    content: "Turn Off";
-}
 
-#btn:checked ~ .wrapper img #bulb-on {
+#btn:checked ~ img#bulb-on {
     animation: none;
 }
 
 #btn:checked ~ label span:before {
     content: "Turn  On";
-    color: green;
+    color: rgb(228, 37, 37);
 }
 
 .wrapper input {
